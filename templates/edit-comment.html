@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Edit comment</h2>
+        <br />
+    </div>
+    <div class="col-md-12">
+        <form method="post" role="form">
+            <input type="hidden" id="post_id" name="post_id" value="{{post_id}}">
+            <div class="form-group">
+                <label for="subject">Comment:</label>
+                <input type="text" class="form-control" id="comment" name="comment" value="{{comment}}">
+            </div>
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                {{error}}
+            </div>
+            {% endif %}
+            <br />
+            <button type="submit" class="btn btn-lg segoe-ui-light ladda-button btn-primary"><span class="glyphicon glyphicon-save" aria-hidden="true"/> Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <h2>Login</h2>
+        <br />
+    </div>
+    <div id="login-form-container" class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <form class="form-signin" name="signinForm" method="post" role="form">
+            <div class="form-group">
+                <label for="username">Username: *</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{username}}">
+            </div>
+            <div class="form-group">
+                <label for="password">Password: *</label>
+                <input type="password" class="form-control" id="password" name="password" value=""/>
+                <br />
+            </div>
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                {{error}}
+            </div>
+            {% endif %}
+            <button type="submit" class="btn btn-lg segoe-ui-light ladda-button btn-primary btn-block">Submit</button>
+            <label class="checkbox" style="text-align:center;">
+            <a href="/signup">New User? Sign Up.</a>
+            </label>
+        </form>
+    </div>
+</div>
+{% endblock %}

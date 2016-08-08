@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <h2>Sign Up</h2>
+        <br />
+    </div>
+    <div id="singup-form-container" class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <form method="post" role="form">
+            <div class="form-group">
+                <label for="username">Username: *</label>
+                <input type="text" class="form-control" id="username" name="username" value="{{username}}">
+                {% if error_username %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    {{error_username}}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="password">Password: *</label>
+                <input type="password" class="form-control" id="password" name="password" value="">
+                {% if error_password %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    {{error_password}}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="re-enter">Re-Enter your Password: *</label>
+                <input type="password" class="form-control" id="re-enter" name="re-enter" value="">
+                {% if error_verify %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    {{error_verify}}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="email">Email (optional):</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{email}}">
+                {% if error_email %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    {{error_email}}
+                </div>
+                {% endif %}
+            </div>
+            <br />
+            <button type="submit" class="btn btn-lg segoe-ui-light ladda-button btn-primary btn-block">Submit</button>
+            <label class="checkbox" style="text-align:center;">
+            <a href="/login">have an account? Login.</a>
+            </label>
+        </form>
+    </div>
+</div>
+{% endblock %}
