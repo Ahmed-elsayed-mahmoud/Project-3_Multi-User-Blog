@@ -208,7 +208,7 @@ class NewPost(BlogHandler):
         """
 
         if not self.user:
-            self.redirect('/blog')
+            return self.redirect('/blog')
 
         subject = self.request.get('subject')
         content = self.request.get('content')
@@ -267,7 +267,7 @@ class EditPost(BlogHandler):
         """
 
         if not self.user:
-            self.redirect('/blog')
+            return self.redirect('/blog')
 
         subject = self.request.get('subject')
         content = self.request.get('content')
@@ -329,7 +329,7 @@ class EditComment(BlogHandler):
         """
 
         if not self.user:
-            self.redirect('/blog')
+            return self.redirect('/blog')
 
         comment = self.request.get('comment')
 
